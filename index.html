@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CTRI</title>
 
-  <!-- Google Font: Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #F60700;
-      --accent: #FF7803;
-      --highlight: #F7D100;
+      --red: #F60700;
+      --orange: #FF7803;
+      --yellow: #F7D100;
       --dark: #171717;
-      --light: #FEFEFE;
+      --white: #FEFEFE;
     }
 
     * {
@@ -25,97 +24,104 @@
 
     body {
       font-family: 'Lato', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+      background: var(--red);
+      color: var(--white);
+      min-height: 100vh;
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 2rem;
     }
 
-    header {
+    .container {
+      max-width: 800px;
       text-align: center;
-      margin-bottom: 3rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      color: var(--primary);
+    h1 {
+      font-size: 3rem;
       margin-bottom: 0.5rem;
+      letter-spacing: 2px;
     }
 
-    header p {
+    .tagline {
       font-size: 1.2rem;
-      color: var(--dark);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    .subtext {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin: 2rem 0;
     }
 
     h2 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
     }
 
-    p {
-      margin-bottom: 0.8rem;
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin-top: 0.5rem;
     }
 
     .goal {
-      background: #fff3f3;
-      border-left: 4px solid var(--primary);
-      padding: 1rem;
-      font-weight: 500;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .subjects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .subjects span {
-      display: inline-block;
-      background: var(--highlight);
+      background: var(--yellow);
       color: var(--dark);
       padding: 0.4rem 0.7rem;
-      margin: 0.2rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
     }
 
     .cta {
-      text-align: center;
       margin-top: 2rem;
     }
 
     .cta a {
-      text-decoration: none;
-      background: var(--primary);
-      color: var(--light);
+      display: inline-block;
+      background: var(--white);
+      color: var(--red);
       padding: 0.8rem 1.5rem;
-      border-radius: 6px;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
       transition: 0.3s ease;
     }
 
     .cta a:hover {
-      background: var(--accent);
+      background: var(--orange);
+      color: var(--white);
     }
 
     footer {
-      text-align: center;
-      margin-top: 3rem;
+      margin-top: 2.5rem;
       font-size: 0.9rem;
-      color: #555;
+      opacity: 0.9;
     }
 
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    a {
+      color: var(--white);
     }
   </style>
 </head>
@@ -125,25 +131,23 @@
   <div class="container">
 
     <!-- Hero -->
-    <header>
-      <h1>CTRI</h1>
-      <p>We are building clear, self-study-friendly textbooks for SSCE students.</p>
-      <p><em>An initiative of Care for Knowledge</em></p>
-    </header>
+    <h1>CTRI</h1>
+    <p class="tagline">We are building clear, self-study-friendly textbooks for SSCE students.</p>
+    <p class="subtext"><em>An initiative of Care for Knowledge</em></p>
 
-    <!-- What we’re doing -->
+    <!-- What we do -->
     <section>
       <h2>What we’re doing</h2>
-      <p>
-        CTRI is rethinking how textbooks are written—so students can actually learn on their own.
-        We focus on clarity, structure, and alignment between what is taught and what students are expected to understand.
-      </p>
+      <div class="card">
+        CTRI is rethinking how textbooks are written so students can actually learn on their own.
+        We focus on clarity, structure, and alignment between teaching and understanding.
+      </div>
     </section>
 
     <!-- Goal -->
     <section>
       <h2>Our Goal</h2>
-      <div class="goal">
+      <div class="card goal">
         Develop 10 high-quality SSCE textbooks by 2030.
       </div>
     </section>
@@ -151,27 +155,29 @@
     <!-- Subjects -->
     <section>
       <h2>Current Focus</h2>
-      <p>We have started work in the following subjects:</p>
-      <div class="subjects">
-        <span>Mathematics</span>
-        <span>Physics</span>
-        <span>Chemistry</span>
-        <span>Biology</span>
-        <span>Agricultural Science</span>
+      <div class="card">
+        <p>Subjects we’ve started:</p>
+        <div class="subjects">
+          <span>Mathematics</span>
+          <span>Physics</span>
+          <span>Chemistry</span>
+          <span>Biology</span>
+          <span>Agricultural Science</span>
+        </div>
+        <p style="margin-top: 0.8rem; opacity: 0.9;">More coming soon.</p>
       </div>
-      <p><em>More subjects will be added over time.</em></p>
     </section>
 
     <!-- CTA -->
     <section class="cta">
       <h2>Get Involved</h2>
-      <p>Interested in contributing or following our progress?</p>
-      <a href="#" target="_blank">Join us</a>
+      <p style="margin-bottom: 1rem;">Want to contribute or follow the work?</p>
+      <a href="#">Join Us</a>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>Contact: <a href="mailto:hello@ctri.ng">hello@ctri.ng</a></p>
+      Contact: <a href="mailto:hello@ctri.ng">hello@ctri.ng</a>
     </footer>
 
   </div>
